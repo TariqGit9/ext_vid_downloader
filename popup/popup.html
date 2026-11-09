@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" href="popup.css" />
+  </head>
+  <body>
+    <div class="header">
+      <div class="header-top">
+        <h1>Video DownloadHelper</h1>
+        <div class="header-actions">
+          <label class="save-as-toggle" title="Always show Save As dialog">
+            <input type="checkbox" id="save-as-toggle" />
+            <span>Save As</span>
+          </label>
+          <button id="refresh-btn" title="Rescan page">↻</button>
+        </div>
+      </div>
+      <p class="subtitle" id="status">Scanning...</p>
+    </div>
+
+    <div class="tabs">
+      <button class="tab active" data-tab="detected">Detected</button>
+      <button class="tab" data-tab="downloads">Downloads</button>
+    </div>
+
+    <div id="tab-detected" class="tab-content active">
+      <div id="video-list"></div>
+    </div>
+
+    <div id="tab-downloads" class="tab-content">
+      <div id="downloads-list"></div>
+    </div>
+
+    <!-- Rename modal -->
+    <div id="rename-modal" class="modal" hidden>
+      <div class="modal-content">
+        <h2>Save as</h2>
+        <input
+          type="text"
+          id="rename-input"
+          placeholder="filename"
+          spellcheck="false"
+        />
+        <div class="modal-hint" id="rename-ext"></div>
+        <div class="modal-actions">
+          <button id="rename-cancel" class="btn-secondary">Cancel</button>
+          <button id="rename-ok" class="btn-primary">Download</button>
+        </div>
+      </div>
+    </div>
+
+    <script src="popup.js" type="module"></script>
+  </body>
+</html>
